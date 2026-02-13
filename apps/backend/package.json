@@ -14,7 +14,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@repo/db": "*",
     "@types/express-session": "^1.18.0",
     "cookie-parser": "^1.4.6",
     "cookie-session": "^2.1.0",
