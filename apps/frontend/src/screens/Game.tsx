@@ -71,7 +71,7 @@ export const Game = () => {
   const [result, setResult] = useState<GameResult | null>(null);
   const [player1TimeConsumed, setPlayer1TimeConsumed] = useState(0);
   const [player2TimeConsumed, setPlayer2TimeConsumed] = useState(0);
-  const [gameID,setGameID] = useState("");
+  const [gameID, setGameID] = useState("");
   const setMoves = useSetRecoilState(movesAtom);
   const userSelectedMoveIndex = useRecoilValue(userSelectedMoveIndexAtom);
   const userSelectedMoveIndexRef = useRef(userSelectedMoveIndex);
@@ -95,7 +95,7 @@ export const Game = () => {
       switch (message.type) {
         case GAME_ADDED:
           setAdded(true);
-          setGameID((p)=>message.gameId);
+          setGameID(() => message.gameId);
           break;
         case INIT_GAME:
           setBoard(chess.board());
@@ -258,7 +258,7 @@ export const Game = () => {
       {started && (
         <div className="justify-center flex pt-4 text-white">
           {(user.id === gameMetadata?.blackPlayer?.id ? 'b' : 'w') ===
-          chess.turn()
+            chess.turn()
             ? 'Your turn'
             : "Opponent's turn"}
         </div>
@@ -314,8 +314,8 @@ export const Game = () => {
                 <div className="pt-8 flex justify-center w-full">
                   {added ? (
                     <div className='flex flex-col items-center space-y-4 justify-center'>
-                      <div className="text-white"><Waitopponent/></div>
-                      <ShareGame gameId={gameID}/>
+                      <div className="text-white"><Waitopponent /></div>
+                      <ShareGame gameId={gameID} />
                     </div>
                   ) : (
                     gameId === 'random' && (
