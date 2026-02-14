@@ -1,7 +1,6 @@
 import { atom, selector } from 'recoil';
 
-// How do you put this in .env? @hkirat
-export const BACKEND_URL = 'http://localhost:3000';
+export const BACKEND_URL = import.meta.env.VITE_APP_BACKEND_URL ?? 'http://localhost:3000';
 export interface User {
   token: string;
   id: string;
